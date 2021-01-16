@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -138,9 +139,8 @@ namespace ConsoleApp1
                     Console.WriteLine("Please enter the second number:");
                     double addition2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"You are wanting to add {addition1} to {addition2}");
-                    Console.WriteLine("If this is correct, press (1), else press (2)");
-                    double choicequiz1 = Convert.ToInt32(Console.ReadLine());
-
+                    double plusanswer = addition1 + addition2;
+                    Console.WriteLine($"You have added {addition1} to {addition2} and the answer is {plusanswer}");  ;
                 }
                 else if (mathsChoice == 2)
                 {
@@ -150,8 +150,8 @@ namespace ConsoleApp1
                     Console.WriteLine("Please enter the second number:");
                     double subtraction2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"You are wanting to subtract {subtraction2} from {subtraction1}");
-                    Console.WriteLine("If this is correct, press (1), else press (2)");
-                    double choicequiz2 = Convert.ToInt32(Console.ReadLine());
+                    double subanswer = subtraction1 - subtraction2;  ;
+                    Console.WriteLine($"You have subtracted {subtraction2} from {subtraction1} and the answer is {subanswer}");  ;
                 }
                 else if (mathsChoice == 3)
                 {
@@ -161,8 +161,8 @@ namespace ConsoleApp1
                     Console.WriteLine("Please enter the second number:");
                     double multiplication2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"You are wanting to multiply {multiplication1} by {multiplication2}");
-                    Console.WriteLine("If this is correct, press (1), else press (2)");
-                    double choicequiz3 = Convert.ToInt32(Console.ReadLine());
+                    double multiplyanswer = multiplication1 * multiplication2;
+                    Console.WriteLine($"You have multiplied {multiplication1} by {multiplication2} and the answer is {multiplyanswer}"); ;
                 }
                 else if (mathsChoice == 4)
                 {
@@ -172,13 +172,45 @@ namespace ConsoleApp1
                     Console.WriteLine("Please enter the second number:");
                     double division2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"You are wanting to divide {division1} by {division2}");
-                    Console.WriteLine("If this is correct, press (1), else press (2)");
-                    double choicequiz4 = Convert.ToInt32(Console.ReadLine());
+                    double divisionanswer = division1 / division2;
+                    Console.WriteLine($"You have divided {division1} by {division2} and the answer is {divisionanswer}");
                 }
 
-
-
+            
+            
+        
             }
+            //Start Coding Here
+            Console.Write("please enter a file to search for");
+            string fileResponse = Console.ReadLine();
+            Console.Write("please enter a word to search for in the file");
+            string wordResponse = Console.ReadLine();
+            StreamReader myfile = File.OpenText(fileResponse);
+            string line = myfile.ReadLine();
+            int position = line.IndexOf(wordResponse);
+            int count = 0; //counts the number of times wordResponse is found.
+            while (line != null)
+            {
+                if (position != -1)
+                {
+                    count++;
+                }
+                line = myfile.ReadLine();
+            }
+            if (count == 0)
+            {
+                Console.WriteLine("Your word was not found!");
+            }
+            else
+            {
+                Console.WriteLine("Your word was found " + count + " times!" + position);
+            }
+            Console.ReadLine();
+
+
+
+
+
         }
     }
 }
