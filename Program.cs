@@ -140,7 +140,7 @@ namespace ConsoleApp1
                     double addition2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"You are wanting to add {addition1} to {addition2}");
                     double plusanswer = addition1 + addition2;
-                    Console.WriteLine($"You have added {addition1} to {addition2} and the answer is {plusanswer}");  ;
+                    Console.WriteLine($"You have added {addition1} to {addition2} and the answer is {plusanswer}"); ;
                 }
                 else if (mathsChoice == 2)
                 {
@@ -150,8 +150,8 @@ namespace ConsoleApp1
                     Console.WriteLine("Please enter the second number:");
                     double subtraction2 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine($"You are wanting to subtract {subtraction2} from {subtraction1}");
-                    double subanswer = subtraction1 - subtraction2;  ;
-                    Console.WriteLine($"You have subtracted {subtraction2} from {subtraction1} and the answer is {subanswer}");  ;
+                    double subanswer = subtraction1 - subtraction2; ;
+                    Console.WriteLine($"You have subtracted {subtraction2} from {subtraction1} and the answer is {subanswer}"); ;
                 }
                 else if (mathsChoice == 3)
                 {
@@ -175,18 +175,28 @@ namespace ConsoleApp1
                     double divisionanswer = division1 / division2;
                     Console.WriteLine($"You have divided {division1} by {division2} and the answer is {divisionanswer}");
                 }
-
-            
-            
-        
             }
             //Start Coding Here
-            
 
-
-
-
+            Console.WriteLine("Pick a number between 1 and 10. Keep it in your head.");
+            Console.WriteLine("Multiply your number by two. Multiply the new number by 5. Divide the current number by the original number. Subtract 7 from the current number.");
+            Console.WriteLine("The Number is 3? Yes(1) or no(2)?");
+            double thinkingofanumber = Convert.ToInt32(Console.ReadLine());
+            if (thinkingofanumber == 1)
+            {
+                Console.WriteLine("I guessed your number!");
 
             }
+            else
+            {
+                Console.WriteLine("I am stupid.");
+            }
+
+
+
+
+
+
+        }
     }
 }
