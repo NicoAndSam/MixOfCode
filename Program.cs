@@ -181,36 +181,12 @@ namespace ConsoleApp1
         
             }
             //Start Coding Here
-            Console.Write("please enter a file to search for");
-            string fileResponse = Console.ReadLine();
-            Console.Write("please enter a word to search for in the file");
-            string wordResponse = Console.ReadLine();
-            StreamReader myfile = File.OpenText(fileResponse);
-            string line = myfile.ReadLine();
-            int position = line.IndexOf(wordResponse);
-            int count = 0; //counts the number of times wordResponse is found.
-            while (line != null)
-            {
-                if (position != -1)
-                {
-                    count++;
-                }
-                line = myfile.ReadLine();
+            
+
+
+
+
+
             }
-            if (count == 0)
-            {
-                Console.WriteLine("Your word was not found!");
-            }
-            else
-            {
-                Console.WriteLine("Your word was found " + count + " times!" + position);
-            }
-            Console.ReadLine();
-
-
-
-
-
-        }
     }
 }
